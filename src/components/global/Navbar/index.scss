@@ -1,0 +1,146 @@
+@use "../../../scss/variables" as *;
+@import "../../../scss/mixins";
+
+.navbar-component {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 64px;
+  width: calc(100% - 240px);
+  z-index: 999;
+  background-color: $mainBackgroundColor;
+  color: $lightColor;
+  box-shadow: rgba(80, 80, 80, 0.2) 0px 1px 8px 0px,
+    rgba(80, 80, 80, 0.14) 0px 3px 4px 0px,
+    rgba(80, 80, 80, 0.12) 0px 3px 3px -2px;
+
+  display: flex;
+  align-items: center;
+
+  .toggleMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px !important;
+    // height: 35.5px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    background-color: $lightColor;
+    color: $mainBackgroundColor;
+    box-shadow: rgb(33, 150, 243) 0px 2px 40px -5px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    // margin-top: 16px;
+    margin-left: -20px;
+
+    svg {
+      color: $darkColor !important;
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+
+    button {
+      color: $lightColor;
+      margin-right: 10px;
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-right: 30px;
+
+    .searchInput {
+      width: 180px;
+      padding: 2px 8px;
+      background: rgba(255, 255, 255, 0.2) !important;
+      border-radius: $borderRadiusForCards;
+      margin-right: 30px;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      input {
+        width: 100%;
+        height: 30px;
+        padding: 2px 8px;
+        background: transparent !important;
+        color: $lightColor !important;
+        border-radius: $borderRadiusForCards;
+        border: none;
+        font-size: 14px;
+        font-weight: 400;
+        outline: none !important;
+
+        &::placeholder {
+          color: $lightColor !important ;
+        }
+      }
+
+      &.active {
+        width: 360px;
+      }
+    }
+  }
+
+  &.activeMenu {
+    width: calc(100% - 64px);
+    .toggleMenu {
+      display: none;
+    }
+  }
+
+  @media (min-width: #{$desktopBreakPoint} ) {
+    .drawerButton {
+      display: none;
+    }
+  }
+  @media (max-width: #{$desktopBreakPoint - 1} ) {
+    width: 100%;
+    padding-left: 30px;
+    .toggleMenu {
+      display: none;
+    }
+  }
+  @media (max-width: #{$tabletBreakPoint - 1} ) {
+    .content {
+      .searchInput {
+        width: 120px;
+
+        &.active {
+          width: 150px;
+        }
+      }
+    }
+  }
+}
+
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  background-color: $lightColor !important;
+  color: $lightColor;
+  width: 100px !important;
+
+  a {
+    text-decoration: none;
+    color: $lightColor;
+  }
+}
+
+.menuAppBarContainer {
+  ul {
+    background-color: $mainBackgroundColor !important;
+    color: $lightColor;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100px !important;
+    a {
+      text-decoration: none;
+      color: $lightColor;
+    }
+  }
+}

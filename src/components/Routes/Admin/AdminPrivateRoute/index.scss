@@ -1,0 +1,22 @@
+@use "../../../../scss/variables" as *;
+
+.mainLayout {
+  height: 100%;
+}
+
+main {
+  position: relative;
+  min-height: 100%;
+  background-color: $backgroundColorForLayout;
+  padding: 30px;
+  padding-bottom: 0;
+  padding-left: 270px;
+  transition: all 0.2s ease-in-out;
+
+  &.toggleMenu {
+    padding-left: 80px;
+  }
+  @media (max-width: #{$desktopBreakPoint - 1} ) {
+    padding-left: 30px;
+  }
+}

@@ -1,0 +1,47 @@
+@use "../../../scss/variables" as *;
+
+.inputComponent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+  margin-bottom: 12px;
+
+  .labelAndError {
+    display: flex;
+    justify-content: space-between;
+
+    label {
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    .inputError {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0 8px;
+      font-weight: 600;
+      color: red !important;
+      margin: 0;
+      svg {
+        color: red !important;
+      }
+    }
+  }
+
+  input,
+  textarea {
+    padding: 8px;
+    font-weight: 600;
+    width: 100%;
+    outline: none;
+    color: $darkColor !important;
+    border-radius: 4px;
+    border: none;
+
+    &::placeholder {
+      color: $darkColor !important;
+    }
+  }
+}

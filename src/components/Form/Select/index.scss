@@ -1,0 +1,52 @@
+@use "../../../scss/variables" as *;
+
+.inputComponent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+  margin-bottom: 12px;
+
+  .labelAndError {
+    display: flex;
+    justify-content: space-between;
+
+    label {
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    .inputError {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0 8px;
+      font-weight: 600;
+      color: red !important;
+      svg {
+        color: red !important;
+      }
+    }
+  }
+
+  .select {
+    border: 1px solid $lightColor !important;
+    border-radius: 5px !important;
+    outline: none !important;
+
+    .MuiSelect-select {
+      display: flex;
+      padding: 8px 10px !important;
+      border-radius: 5px !important;
+      color: $lightColor !important;
+      outline: none !important;
+      width: 100%;
+    }
+
+    option {
+      background-color: $mainBackgroundColor !important;
+      color: $lightColor !important;
+      margin: 10px !important;
+    }
+  }
+}
